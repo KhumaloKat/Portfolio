@@ -1,6 +1,34 @@
 'use strict';
 
 
+//iframe
+document.addEventListener('DOMContentLoaded', function() {
+  const overlay = document.getElementById('iframe-overlay');
+  const iframe = document.getElementById('iframe-content');
+  const closeButton = document.getElementById('close-iframe');
+
+  document.querySelectorAll('.portfolio-links a').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      const href = this.getAttribute('href');
+      iframe.src = href;
+      overlay.style.display = 'flex';
+    });
+  });
+
+  closeButton.addEventListener('click', function() {
+    overlay.style.display = 'none';
+    iframe.src = '';
+  });
+
+  overlay.addEventListener('click', function(event) {
+    if (event.target === overlay) {
+      overlay.style.display = 'none';
+      iframe.src = '';
+    }
+  });
+});
+
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
