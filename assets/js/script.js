@@ -1,33 +1,27 @@
 'use strict';
 
 
-//iframe
-document.addEventListener('DOMContentLoaded', function() {
-  const overlay = document.getElementById('iframe-overlay');
-  const iframe = document.getElementById('iframe-content');
-  const closeButton = document.getElementById('close-iframe');
-
-  document.querySelectorAll('.portfolio-links a').forEach(function(link) {
-    link.addEventListener('click', function(event) {
-      event.preventDefault();
-      const href = this.getAttribute('href');
-      iframe.src = href;
-      overlay.style.display = 'flex';
-    });
-  });
-
-  closeButton.addEventListener('click', function() {
-    overlay.style.display = 'none';
-    iframe.src = '';
-  });
-
-  overlay.addEventListener('click', function(event) {
-    if (event.target === overlay) {
-      overlay.style.display = 'none';
-      iframe.src = '';
-    }
+// Open modal
+document.querySelectorAll('.project-item').forEach(item => {
+  item.addEventListener('click', function() {
+    const modalId = `project-modal-${this.dataset.projectId}`;
+    document.getElementById(modalId).classList.add('active');
   });
 });
+
+// Close modal
+document.querySelectorAll('[data-modal-close-btn]').forEach(btn => {
+  btn.addEventListener('click', function() {
+    this.closest('.modal-container').classList.remove('active');
+  });
+});
+
+document.querySelectorAll('[data-overlay]').forEach(overlay => {
+  overlay.addEventListener('click', function() {
+    this.closest('.modal-container').classList.remove('active');
+  });
+});
+
 
 
 // element toggle function

@@ -16,11 +16,6 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
-<!--
-  venobox
-  -->
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/venobox@2.0.6/venobox.min.css" />
 
   <!--
     - google font link
@@ -312,7 +307,7 @@
           - testimonials
         -->
 
-        <!-- <section class="testimonials">
+        <section class="testimonials">
 
           <h3 class="h3 testimonials-title">Testimonials</h3>
 
@@ -408,14 +403,14 @@
 
           </ul>
 
-        </section> -->
+        </section>
 
 
         <!--
           - testimonials modal
         -->
 
-        <!-- <div class="modal-container" data-modal-container>
+        <div class="modal-container" data-modal-container>
 
           <div class="overlay" data-overlay></div>
 
@@ -453,14 +448,14 @@
 
           </section>
 
-        </div> -->
+        </div>
 
 
         <!--
           - clients
         -->
 
-        <!-- <section class="clients">
+        <section class="clients">
 
           <h3 class="h3 clients-title">Clients</h3>
 
@@ -506,7 +501,7 @@
 
         </section>
 
-      </article> -->
+      </article>
 
 
 
@@ -713,87 +708,82 @@
             </ul>
 
           </div>
-          
+
           <ul class="project-list">
-            <li class="project-item active" data-filter-item data-category="computer vision">
-              <a href="projects/drone.html" class="venobox" data-gall="portfolio">
-          
+
+            <li class="project-item active" data-filter-item data-category="computer vision" data-project-id="1">
+              <a>
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-          
                   <img src="./assets/images/project-1.jpg" alt="Advance Drone Control" loading="lazy">
                 </figure>
-          
                 <h3 class="project-title">Advance Drone Control</h3>
-          
                 <p class="project-category">Computer Vision</p>
-          
               </a>
             </li>
-          
-            <li class="project-item active" data-filter-item data-category="computer vision">
-              <a href="projects/jetson_nano.html" class="venobox" data-gall="portfolio">
-          
+            
+            
+
+            <li class="project-item active" data-filter-item data-category="computer vision" data-project-id="2">
+              <a>
+
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-          
-                  <img src="./assets/images/project-2.png" alt="Jetson nano Project" loading="lazy">
+
+                  <img src="./assets/images/project-2.jpg" alt="Jetson nano Project" loading="lazy">
                 </figure>
-          
+
                 <h3 class="project-title">Jetson Nano Project</h3>
-          
+
                 <p class="project-category">computer vision</p>
-          
+
               </a>
             </li>
-          
-            <li class="project-item active" data-filter-item data-category="computer vision">
-              <a href="projects/blog.html" class="venobox" data-gall="portfolio">
-          
+
+            <li class="project-item active" data-filter-item data-category= "computer vision" data-project-id="3">
+              <a>
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-          
+
                   <img src="./assets/images/project-3.jpg" alt="Arduino Project" loading="lazy">
                 </figure>
-          
+
                 <h3 class="project-title">Arduino Project</h3>
-          
+
                 <p class="project-category">computer vision</p>
-          
+
               </a>
             </li>
-          
+
             <li class="project-item active" data-filter-item data-category="web design">
-              <a href="projects/web.html" class="venobox" data-gall="portfolio">
-          
+              <a href="projects/web.html">
+
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
-          
+
                   <img src="./assets/images/project-4.png" alt="Web Development" loading="lazy">
                 </figure>
-          
+
                 <h3 class="project-title">web development</h3>
-          
+
                 <p class="project-category">Web Design</p>
-          
+
               </a>
             </li>
+
           </ul>
-          
 
         </section>
 
       </article>
-
-
 
       <!--
         - #CONTACT
@@ -808,7 +798,7 @@
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              src="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwipyMO6vPmHAxXX2QIHHQrFCo0Q8gF6BAgjEAI&url=%2Fmaps%2Fplace%2FPretoria%2Fdata%3D!4m2!3m1!1s0x1e95619cbec65033%3A0xf66262b07a847b4c%3Fsa%3DX%26ved%3D1t%3A242%26ictx%3D111&usg=AOvVaw1eUfXJ7yAeSx6gudbQ7b7L&opi=89978449"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
         </section>
@@ -841,10 +831,227 @@
     </div>
 
   </main>
+  
+<!-- Jetson nano modal -->
+<div class="modal-container" id="project-modal-2" style="color: white;">
+  <div class="overlay" data-overlay></div>
+  <section class="modal-content">
+    <button class="modal-close-btn" data-modal-close-btn>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <div class="modal-details">
+      <div class="row" style="display: flex; flex-direction: column; gap: 5px;">
+        <div class="work__box" style="flex: 1; margin: 0; padding: 0;">
+          <div class="work__text" style="margin: 0; padding: 10px;">
+            <h3 style="color: rgb(83, 110, 219);">Jetson Nano Face Attendance</h3>
+            <ul class="" style="margin: 0; padding: 10px;">
+              <li>This project demonstrates a robotic hand controlled by computer vision. By leveraging Python libraries like OpenCV and MediaPipe, along with the cvzone library, the robot hand mimics the movements of a user's hand in real-time. Key components include Arduino for hardware control and opencv-python for image processing. The system allows for intuitive manipulation of robotic limbs through simple gestures captured by a camera.</li>
+
+            </ul>
+
+            <div class="work__links" style="margin: 10px 0 0;">
+              <a href="https://github.com/KhumaloKat/Jetson-Nano-Face-Attendance" title="View Source Code" target="_blank" style="text-decoration: none;">
+                <img src="./images/github.svg" class="work__code" alt="GitHub" style="width: 35px; height: 35px; padding-right: 10px;">
+              </a>
+              <a href="https://1drv.ms/v/s!As4AnYyNpFyNk09yAHyzeL6IXi2t?e=mYy9Ik">
+                <img src="./images/live.png" class="work__code" alt="live" style="width: 35px; height: 35px; padding-right: 10px;">
+              </a>
+              <a href="https://1drv.ms/p/s!As4AnYyNpFyNpUHQQHVV7Wp3OBT_?e=KKYctH" title="View Source Code" target="_blank">
+                <img src="./images/pptx.png" class="work__code" alt="pptx" >
+              </a>
+            </div>
+          </div>
+          <div class="work__image-box" style="margin-top: 5px;">
+            <img src="./images/6.png" class="work__image" alt="Project 10" />
+          </div>
+        </div>
+        <div class="work__box" style="flex: 1; margin: 0; padding: 0;">
+          <div class="work__text" style="margin: 0; padding: 10px;">
+            <h3 style="color: rgb(83, 110, 219);">Jetson Nano Eye Tracking Mechanism</h3>
+            <ul class="" style="margin: 0; padding: 10px;">
+              <li>This project demonstrates a robotic hand controlled by computer vision. By leveraging Python libraries like OpenCV and MediaPipe, along with the cvzone library, the robot hand mimics the movements of a user's hand in real-time. Key components include Arduino for hardware control and opencv-python for image processing. The system allows for intuitive manipulation of robotic limbs through simple gestures captured by a camera.</li>
+
+            </ul>
+
+            <div class="work__links" style="margin: 10px 0 0;">
+              <a href="https://github.com/KhumaloKat/Jetson-nano-Eye-Tracking-Mechanism" title="View Source Code" target="_blank" style="text-decoration: none;">
+                <img src="./images/github.svg" class="work__code" alt="GitHub" style="width: 35px; height: 35px; padding-right: 10px;">
+              </a>
+              <a href="https://1drv.ms/v/s!As4AnYyNpFyNpUfjlKJYAshrpxTo?e=vDkgeB">
+                <img src="./images/live.png" class="work__code" alt="live" style="width: 35px; height: 35px; padding-right: 10px;">
+              </a>
+              <a href="https://1drv.ms/p/s!As4AnYyNpFyNpULj9qdWRZYEK8fg?e=kRMAej" title="View Source Code" target="_blank">
+                <img src="./images/pptx.png" class="work__code" alt="pptx" >
+              </a>
+            </div>
+          </div>
+          <div class="work__image-box" style="margin-top: 5px;">
+            <img src="./images/7.jpg" class="work__image" alt="Project 10" />
+          </div>
+        </div>
+        <div class="work__box" style="flex: 1; margin: 0; padding: 0;">
+          <div class="work__text" style="margin: 0; padding: 10px;">
+            <h3 style="color: rgb(83, 110, 219);">Jetson Nano Jetbot</h3>
+            <ul class="" style="margin: 0; padding: 10px;">
+              <li>This project demonstrates a robotic hand controlled by computer vision. By leveraging Python libraries like OpenCV and MediaPipe, along with the cvzone library, the robot hand mimics the movements of a user's hand in real-time. Key components include Arduino for hardware control and opencv-python for image processing. The system allows for intuitive manipulation of robotic limbs through simple gestures captured by a camera.</li>
+
+            </ul>
+
+            <div class="work__links" style="margin: 10px 0 0;">
+              <a href="https://github.com/KhumaloKat/Jetson_Nano-Robot_Car" title="View Source Code" target="_blank" style="text-decoration: none;">
+                <img src="./images/github.svg" class="work__code" alt="GitHub" style="width: 35px; height: 35px; padding-right: 10px;">
+              </a>
+              <a href="#">
+                <img src="./images/live.png" class="work__code" alt="live" style="width: 35px; height: 35px; padding-right: 10px;">
+              </a>
+              <a href="https://1drv.ms/p/s!As4AnYyNpFyNpUBLM-oYS5_CX3Pe?e=7BLsj8" title="View Source Code" target="_blank">
+                <img src="./images/pptx.png" class="work__code" alt="pptx" >
+              </a>
+            </div>
+          </div>
+          <div class="work__image-box" style="margin-top: 5px;">
+            <img src="./images/8.jpg" class="work__image" alt="Project" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
 
+<!-- Advance drone control modal -->
+<div class="modal-container" id="project-modal-1" style="color: white;">
+  <div class="overlay" data-overlay></div>
+  <section class="modal-content">
+    <button class="modal-close-btn" data-modal-close-btn>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <div class="modal-details">
+      <div class="row" style="display: flex; flex-direction: column; gap: 5px;">
+        <div class="work__box" style="flex: 1; margin: 0; padding: 0;">
+          <div class="work__text" style="margin: 0; padding: 10px;">
+            <h3 style="color: rgb(83, 110, 219);">Drone Hand Gesture Control</h3>
+            <ul class="" style="margin: 0; padding: 10px;">
+              <li>This project enables control of a Tello drone using hand gestures, processed by computer vision algorithms. The system utilizes Python, cvzone, and MediaPipe to detect and interpret hand movements, translating them into drone commands. The user can operate the drone seamlessly without a physical controller, enhancing interaction and ease of control.</li>
+            </ul>
+
+            <div class="work__links" style="margin: 10px 0 0;">
+              <a href="https://github.com/KhumaloKat/Computer-Vision-Drone-Hand-Gesture-Control" title="View Source Code" target="_blank" style="text-decoration: none;">
+                <img src="./images/github.svg" class="work__code" alt="GitHub" style="width: 35px; height: 35px; padding-right: 10px;">
+              </a>
+              <a href="https://1drv.ms/v/s!As4AnYyNpFyNpTYH303Ij_TfmIzE?e=zAui1l">
+                <img src="./images/live.png" class="work__code" alt="live" style="width: 35px; height: 35px;">
+              </a>
+            </div>
+          </div>
+          <div class="work__image-box" style="margin-top: 5px;">
+            <img src="./images/2.png" class="work__image" alt="Project 10" />
+          </div>
+        </div>
+        <div class="work__box" style="flex: 1; margin: 0; padding: 0;">
+          <div class="work__text" style="margin: 0; padding: 10px;">
+            <h3 style="color: rgb(83, 110, 219);">Drone Face Following</h3>
+            <ul class="work__list" style="margin: 0; padding: 0;">
+              <li>This project equips a Tello drone with face-tracking capabilities. By utilizing facial recognition algorithms through Python and cvzone, the drone autonomously follows a person based on their facial features. This makes it useful for monitoring, as the drone can stay focused on a subject’s face, maintaining a smooth following experience.</li>
+            </ul>
+            <div class="work__links" style="margin: 10px 0 0;">
+              <a href="https://github.com/KhumaloKat/Computer-Vision-Drone-Face-Following" title="View Source Code" target="_blank" style="text-decoration: none;">
+                <img src="./images/github.svg" class="work__code" alt="GitHub" style="width: 35px; height: 35px; padding-right: 10px;">
+              </a>
+              <a href="https://1drv.ms/v/s!As4AnYyNpFyNkzKBiXoffuE-ktxG?e=ddsYeZ" target="_blank" class="link__text">
+                <img src="./images/live.png" class="work__code" alt="live" style="width: 35px; height: 35px;">
+              </a>
+            </div>
+            <div style="margin-top: 10px; ">
+            </div>
+          </div>
+          <div class="work__image-box" style="margin-top: 0px;">
+            <img src="./images/3.png" class="work__image" alt="Project" />
+          </div>
+        </div>
+        <div class="work__box" style="flex: 1; margin: 0; padding: 0;">
+          <div class="work__text" style="margin: 0; padding: 10px;">
+            <h3 style="color: rgb(83, 110, 219);">Drone Body Following</h3>
+            <ul class="work__list" style="margin: 0; padding: 0;">
+              <li>The Drone Body Following project allows a Tello drone to track and follow a person by detecting and locking onto their body. Using advanced computer vision libraries like cvzone and MediaPipe, combined with Python, the system ensures the drone maintains a steady follow on the user's movements, providing an innovative solution for autonomous tracking.</li>
+            </ul>
+            <div class="work__links" style="margin: 10px 0 0;">
+              <a href="https://github.com/KhumaloKat/Computer-Vision-Drone-Face-Following" title="View Source Code" target="_blank" style="text-decoration: none;">
+                <img src="./images/github.svg" class="work__code" alt="GitHub" style="width: 35px; height: 35px; padding-right: 10px;">
+              </a>
+              <a href="https://1drv.ms/v/s!As4AnYyNpFyNkzKBiXoffuE-ktxG?e=ddsYeZ" target="_blank" class="link__text">
+                <img src="./images/live.png" class="work__code" alt="live" style="width: 35px; height: 35px;">
+              </a>
+            </div>
+            <div style="margin-top: 10px; ">
+            </div>
+          </div>
+          <div class="work__image-box" style="margin-top: 0px;">
+            <img src="./images/4.png" class="work__image" alt="Project" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
 
+<!-- arduino modal -->
+<div class="modal-container" id="project-modal-3" style="color: white;">
+  <div class="overlay" data-overlay></div>
+  <section class="modal-content">
+    <button class="modal-close-btn" data-modal-close-btn>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+    <div class="modal-details">
+      <div class="row" style="display: flex; flex-direction: column; gap: 5px;">
+        <div class="work__box" style="flex: 1; margin: 0; padding: 0;">
+          <div class="work__text" style="margin: 0; padding: 10px;">
+            <h3 style="color: rgb(83, 110, 219);">Computer Vision Robot Hand Control</h3>
+            <ul class="" style="margin: 0; padding: 10px;">
+              <li>This project demonstrates a robotic hand controlled by computer vision. By leveraging Python libraries like OpenCV and MediaPipe, along with the cvzone library, the robot hand mimics the movements of a user's hand in real-time. Key components include Arduino for hardware control and opencv-python for image processing. The system allows for intuitive manipulation of robotic limbs through simple gestures captured by a camera.</li>
+
+            </ul>
+
+            <div class="work__links" style="margin: 10px 0 0;">
+              <a href="https://github.com/KhumaloKat/Computer-Vision-Robot-Hand" title="View Source Code" target="_blank" style="text-decoration: none;">
+                <img src="./images/github.svg" class="work__code" alt="GitHub" style="width: 35px; height: 35px; padding-right: 10px;">
+              </a>
+              <a href="https://1drv.ms/v/s!As4AnYyNpFyNpTYH303Ij_TfmIzE?e=zAui1l">
+                <img src="./images/live.png" class="work__code" alt="live" style="width: 35px; height: 35px;">
+              </a>
+            </div>
+          </div>
+          <div class="work__image-box" style="margin-top: 5px;">
+            <img src="./images/5.png" class="work__image" alt="Project 10" />
+          </div>
+        </div>
+        <div class="work__box" style="flex: 1; margin: 0; padding: 0;">
+          <div class="work__text" style="margin: 0; padding: 10px;">
+            <h3 style="color: rgb(83, 110, 219);">Face door lock</h3>
+            <ul class="work__list" style="margin: 0; padding: 0;">
+              <li>The Face Door Lock project integrates facial recognition technology to secure access to doors. Using Python with cvzone and MediaPipe libraries for face detection and recognition, combined with Arduino for the locking mechanism, this system authenticates users based on facial features. The solution enhances security by ensuring only authorized individuals can unlock the door, providing a modern alternative to traditional key-based locks.</li>
+
+            </ul>
+            <div class="work__links" style="margin: 10px 0 0;">
+              <a href="https://github.com/KhumaloKat/Computer-Vision-Face-Door-Lock" title="View Source Code" target="_blank" style="text-decoration: none;">
+                <img src="./images/github.svg" class="work__code" alt="GitHub" style="width: 35px; height: 35px; padding-right: 10px;">
+              </a>
+              <a href="https://1drv.ms/v/s!As4AnYyNpFyNkzKBiXoffuE-ktxG?e=ddsYeZ" target="_blank" class="link__text">
+                <img src="./images/live.png" class="work__code" alt="live" style="width: 35px; height: 35px;">
+              </a>
+            </div>
+            <div style="margin-top: 10px; ">
+            </div>
+          </div>
+          <div class="work__image-box" style="margin-top: 0px;">
+            <img src="./images/face.png" class="work__image" alt="Project 9" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
 
   <!--
@@ -857,14 +1064,6 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <!-- Venobox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/venobox@2.0.6/venobox.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        $('.venobox').venobox(); 
-      });
-    </script>
 
 </body>
 
