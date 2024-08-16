@@ -790,44 +790,50 @@
       -->
 
       <article class="contact" data-page="contact">
-
         <header>
           <h2 class="h2 article-title">Contact</h2>
         </header>
-
+      
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229975.07905328897!2d28.197950499999997!3d-25.758649950000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95619cbec65033%3A0xf66262b07a847b4c!2sPretoria!5e0!3m2!1sen!2sza!4v1723810949609!5m2!1sen!2sza" 
-             width="400" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229975.07905328897!2d28.197950499999997!3d-25.758649950000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95619cbec65033%3A0xf66262b07a847b4c!2sPretoria!5e0!3m2!1sen!2sza!4v1723810949609!5m2!1sen!2sza"
+              width="400" height="100" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </figure>
         </section>
-
+      
         <section class="contact-form">
-
           <h3 class="h3 form-title">Contact Form</h3>
-
-          <form action="#" class="form" data-form>
-
+          <form id="contact-form" class="form" data-form>
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
+              <input type="email" name="email" class="form-input" placeholder="Email address" required>
             </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
+            <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
+            <button class="form-btn" type="submit">
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
-
           </form>
-
         </section>
-
       </article>
+      
+      <script type="text/javascript">
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the form from submitting the traditional way
+      
+          emailjs.sendForm('service_ugilufa', 'template_lezac9x', this)
+            .then(function(response) {
+              alert('Message sent successfully!');
+              console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+              alert('Failed to send message. Please try again later.');
+              console.log('FAILED...', error);
+            });
+        });
+      </script>
+      
 
     </div>
 
@@ -1065,6 +1071,13 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    emailjs.init("bIqxrsbZSTRgcErxl"); 
+  })();
+</script>
+
 
 </body>
 
