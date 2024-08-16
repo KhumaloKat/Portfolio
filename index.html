@@ -806,25 +806,20 @@
       
         <section class="contact-form">
           <h3 class="h3 form-title">Contact Form</h3>
-          <form id="contact-form" class="form" data-form>
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
-              <input type="email" name="email" class="form-input" placeholder="Email address" required>
-            </div>
-            <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
-            <button class="form-btn" type="submit">
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-          </form>
+          <form id="contact-form">
+            <input type="text" name="fullname" placeholder="Full name" required />
+            <input type="email" name="email" placeholder="Email address" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>          
         </section>
       </article>
       
       <script type="text/javascript">
         document.getElementById('contact-form').addEventListener('submit', function(event) {
-          event.preventDefault(); // Prevent the form from submitting the traditional way
-      
-          emailjs.sendForm('service_ugilufa', 'template_lezac9x', this)
+        event.preventDefault();
+
+        emailjs.sendForm('service_ugilufa', 'template_lezac9x', this)
             .then(function(response) {
               alert('Message sent successfully!');
               console.log('SUCCESS!', response.status, response.text);
