@@ -36,10 +36,10 @@
   padding: 20px;
   border-radius: 8px;
   position: relative;
-  width: 1000px; /* Increase width as needed */
-  height: 600px;
-  max-width: 1200px; /* Adjust the maximum width */
-  max-height: 1000px; /* Adjust the maximum height */
+  width: 1400px; /* Increase width as needed */
+  height: 800px;
+  max-width: 1700px; /* Adjust the maximum width */
+  max-height: 1500px; /* Adjust the maximum height */
   overflow-y: auto; /* Enable scrolling if content exceeds height */
 }
 .modal-img-wrapper {
@@ -53,6 +53,16 @@
   background: transparent;
   border: none;
   cursor: pointer;
+}
+
+.modal-close-btn:hover, 
+.modal-close-btn:focus {
+  color: rgb(0, 162, 255); /* Text or icon color when hovered */
+}
+
+.modal-close-btn:hover ion-icon, 
+.modal-close-btn:focus ion-icon {
+  color: rgb(0, 132, 255); /* Changes the icon color when hovered or focused */
 }
 
 .modal-description {

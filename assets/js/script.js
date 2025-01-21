@@ -3,26 +3,20 @@
 
 // Open modal
 document.querySelectorAll('.project-item').forEach(item => {
-  item.addEventListener('click', function() {
+  item.addEventListener('click', function () {
     const modalId = `project-modal-${this.dataset.projectId}`;
     document.getElementById(modalId).classList.add('active');
   });
 });
 
-// Close modal
-document.querySelectorAll('[data-modal-close-btn]').forEach(btn => {
-  btn.addEventListener('click', function() {
-    this.closest('.modal-container').classList.remove('active');
-  });
+// Close modal on button click or overlay click
+document.querySelectorAll('.modal-container').forEach(modal => {
+  const overlay = modal.querySelector('.overlay');
+  const closeBtn = modal.querySelector('[data-modal-close-btn]');
+  
+  overlay.addEventListener('click', () => modal.classList.remove('active'));
+  closeBtn.addEventListener('click', () => modal.classList.remove('active'));
 });
-
-document.querySelectorAll('[data-overlay]').forEach(overlay => {
-  overlay.addEventListener('click', function() {
-    this.closest('.modal-container').classList.remove('active');
-  });
-});
-
-
 
 // element toggle function
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
