@@ -69,6 +69,10 @@
   margin-top: 15px;
 }
 
+hr {
+  border: none; /* Remove default styling */
+  border-top: 2px solid rgb(255, 255, 255); /* Add a solid line */
+}
 
 .iframe-container {
   position: relative;
