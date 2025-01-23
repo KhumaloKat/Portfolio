@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Background Animation</title>
+
+</head>
+<body>
+
+</body>
+</html>
+
+
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +32,41 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
 
+  <!-- Background animation -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1; /* Ensure the canvas is behind all content */
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      color: black; /* Adjust content color for better contrast */
+      text-align: center;
+      padding: 20px;
+    }
+    .content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .content p {
+      font-size: 1.2rem;
+    }
+  </style>
+  <!--  -->
+
   <!--
     - google font link
   -->
@@ -28,6 +78,110 @@
 
 <body>
 
+  <!-- Background animation -->
+     <canvas id="backgroundCanvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('backgroundCanvas');
+    const context = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas(); // Initialize canvas size
+
+    const agents = [];
+
+    class Vector {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+      }
+
+      getDistance(v) {
+        const dx = this.x - v.x;
+        const dy = this.y - v.y;
+        return Math.sqrt(dx * dx + dy * dy);
+      }
+    }
+
+    class Agent {
+      constructor(x, y) {
+        this.pos = new Vector(x, y);
+        this.vel = new Vector(Math.random() * 2 - 1, Math.random() * 2 - 1);
+        this.radius = Math.random() * 8 + 4;
+      }
+
+      bounce(width, height) {
+        if (this.pos.x <= 0 || this.pos.x >= width) this.vel.x *= -1;
+        if (this.pos.y <= 0 || this.pos.y >= height) this.vel.y *= -1;
+      }
+
+      update() {
+        this.pos.x += this.vel.x;
+        this.pos.y += this.vel.y;
+      }
+
+      draw(context) {
+        context.save();
+        context.translate(this.pos.x, this.pos.y);
+
+        context.lineWidth = 4;
+        context.fillStyle = 'hsl(0, 0%, 7%)';  // Black circles
+        context.strokeStyle = 'white'; // Black border
+
+        context.beginPath();
+        context.arc(0, 0, this.radius, 0, Math.PI * 2);
+        context.fill();
+        context.stroke();
+
+        context.restore();
+      }
+    }
+
+    for (let i = 0; i < 40; i++) {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      agents.push(new Agent(x, y));
+    }
+
+    function animate() {
+      context.fillStyle = 'hsl(0, 0%, 7%)';  // White background
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      for (let i = 0; i < agents.length; i++) {
+        const agent = agents[i];
+
+        for (let j = i + 1; j < agents.length; j++) {
+          const other = agents[j];
+          const dist = agent.pos.getDistance(other.pos);
+
+          if (dist > 200) continue;
+
+          context.lineWidth = Math.max(1, 12 - (dist / 200) * 11);
+          context.beginPath();
+          context.moveTo(agent.pos.x, agent.pos.y);
+          context.lineTo(other.pos.x, other.pos.y);
+          context.strokeStyle = 'white';  // Black connecting lines
+          context.stroke();
+        }
+      }
+
+      agents.forEach(agent => {
+        agent.update();
+        agent.draw(context);
+        agent.bounce(canvas.width, canvas.height);
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+  
   <!--
     - #MAIN
   -->
@@ -42,7 +196,7 @@
       
       <div class="sidebar-info">
         <figure class="avatar-box">
-          <img src="./assets/images/me.jpg" alt="Khumalo SK" style="width: 165px; height: auto;">
+          <img src="./assets/images/me.gif" alt="Khumalo SK" style="width: 300px; height: auto;">
         </figure>
         <div class="info-content">
           <h1 class="name" title="KhumaloKat">Khumalo Katleho</h1>
@@ -290,10 +444,11 @@
 
           </ul>
 
+          
+
         </section>
 
-
-       
+        
 
 
         <!--
@@ -346,6 +501,7 @@
 
         </section> -->
 
+        
       </article>
 
 
@@ -694,15 +850,17 @@
           </figure>
         </section>
       
-        <section class="contact-form">
-          <h3 class="h3 form-title">Contact Form</h3>
-          <form id="contact-form">
-            <input type="text" name="fullname" placeholder="Full name" required />
-            <input type="email" name="email" placeholder="Email address" required />
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>          
+        <section class="contact-form-container">
+          <div class="contact-form-wrapper">
+            <form id="contact-form">
+              <input type="text" name="fullname" placeholder="Full name" required />
+              <input type="email" name="email" placeholder="Email address" required />
+              <textarea name="message" placeholder="Your Message" required></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
         </section>
+        
       </article>
       
       <script type="text/javascript">
@@ -832,9 +990,6 @@
               <a href="https://github.com/KhumaloKat/Computer-Vision-Drone-Hand-Gesture-Control" title="View Source Code" target="_blank" style="text-decoration: none;">
                 <img src="./images/github.svg" class="work__code" alt="GitHub" style="width: 35px; height: 35px; padding-right: 10px;">
               </a>
-              <a href="https://photos.app.goo.gl/DWPphn3FSDkapvig8">
-                <img src="./images/live.png" class="work__code" alt="live" style="width: 35px; height: 35px;">
-              </a>
             </div>
           </div>
           <div class="work__image-box" style="margin-top: 5px;">
@@ -855,9 +1010,6 @@
             <div class="work__links" style="margin: 10px 0 0;">
               <a href="https://github.com/KhumaloKat/Computer-Vision-Drone-Face-Following" title="View Source Code" target="_blank" style="text-decoration: none;">
                 <img src="./images/github.svg" class="work__code" alt="GitHub" style="width: 35px; height: 35px; padding-right: 10px;">
-              </a>
-              <a href="https://1drv.ms/v/s!As4AnYyNpFyNpX1zjmXaE79w5do1?e=0E6cNU" target="_blank" class="link__text">
-                <img src="./images/live.png" class="work__code" alt="live" style="width: 35px; height: 35px;">
               </a>
             </div>
             <div style="margin-top: 10px; ">
@@ -921,9 +1073,6 @@
               <a href="https://github.com/KhumaloKat/Computer-Vision-Robot-Hand" title="View Source Code" target="_blank" style="text-decoration: none;">
                 <img src="./images/github.svg" class="work__code" alt="GitHub" style="width: 35px; height: 35px; padding-right: 10px;">
               </a>
-              <a href="https://1drv.ms/v/s!As4AnYyNpFyNpTYH303Ij_TfmIzE?e=zAui1l">
-                <img src="./images/live.png" class="work__code" alt="live" style="width: 35px; height: 35px;">
-              </a>
             </div>
           </div>
           <div class="work__image-box" style="margin-top: 5px;">
@@ -956,6 +1105,8 @@
     </div>
   </section>
 </div>
+
+<!-- websites -->
 
 <div class="modal-container" id="project-modal-4" style="color: white;">
   <div class="overlay" data-overlay></div>
