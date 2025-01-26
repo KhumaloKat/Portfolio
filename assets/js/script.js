@@ -224,3 +224,52 @@ function showSlider(type){
         next.click();
     }, timeAutoNext)
 }
+
+// Skill slider
+const slider = document.querySelector(".slider");
+const form1 = document.querySelector(".form"); // Renamed to form1
+let mouseDownAt = 0;
+let left = 0;
+
+slider.onmousedown = (e) => {
+    mouseDownAt = e.clientX;
+    console.log(mouseDownAt);
+};
+
+slider.onmouseup = () => {
+    mouseDownAt = 0;  
+    slider.style.userSelect = 'unset';
+    slider.style.cursor = 'unset';
+    form1.style.pointerEvents = 'unset'; 
+    form1.classList.remove('left'); 
+    form1.classList.remove('right'); 
+};
+
+slider.onmousemove = (e) => {
+    if (mouseDownAt == 0) return;
+    slider.style.userSelect = 'none';
+    slider.style.cursor = 'grab';
+    form1.style.pointerEvents = 'none'; 
+    
+    if (e.clientX > mouseDownAt) {
+        form1.classList.add('left'); 
+        form1.classList.remove('right'); 
+    } else if (e.clientX < mouseDownAt) {
+        form1.classList.remove('left'); 
+        form1.classList.add('right'); 
+    }
+    
+    // Increase or decrease the speed 
+    // by changing the value of 'speed'
+    let speed = 3;
+    let leftTemporary = left + ((e.clientX - mouseDownAt) / speed);
+    let leftLimit = form1.offsetWidth - slider.offsetWidth / 2; 
+
+    if (leftTemporary < 0 && Math.abs(leftTemporary) < leftLimit) {
+        form1.style.setProperty('--left', left + 'px'); 
+        left = leftTemporary;
+        mouseDownAt = e.clientX;
+    }
+};
+
+// Project Slider
