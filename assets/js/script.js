@@ -224,3 +224,98 @@ function showSlider(type){
         next.click();
     }, timeAutoNext)
 }
+
+// Skill slider
+const slider = document.querySelector(".slider");
+const form1 = document.querySelector(".form"); // Renamed to form1
+let mouseDownAt = 0;
+let left = 0;
+
+slider.onmousedown = (e) => {
+    mouseDownAt = e.clientX;
+    console.log(mouseDownAt);
+};
+
+slider.onmouseup = () => {
+    mouseDownAt = 0;  
+    slider.style.userSelect = 'unset';
+    slider.style.cursor = 'unset';
+    form1.style.pointerEvents = 'unset'; 
+    form1.classList.remove('left'); 
+    form1.classList.remove('right'); 
+};
+
+slider.onmousemove = (e) => {
+    if (mouseDownAt == 0) return;
+    slider.style.userSelect = 'none';
+    slider.style.cursor = 'grab';
+    form1.style.pointerEvents = 'none'; 
+    
+    if (e.clientX > mouseDownAt) {
+        form1.classList.add('left'); 
+        form1.classList.remove('right'); 
+    } else if (e.clientX < mouseDownAt) {
+        form1.classList.remove('left'); 
+        form1.classList.add('right'); 
+    }
+    
+    // Increase or decrease the speed 
+    // by changing the value of 'speed'
+    let speed = 3;
+    let leftTemporary = left + ((e.clientX - mouseDownAt) / speed);
+    let leftLimit = form1.offsetWidth - slider.offsetWidth / 2; 
+
+    if (leftTemporary < 0 && Math.abs(leftTemporary) < leftLimit) {
+        form1.style.setProperty('--left', left + 'px'); 
+        left = leftTemporary;
+        mouseDownAt = e.clientX;
+    }
+};
+
+// Project Slider
+<<<<<<< HEAD
+
+let nextButton = document.getElementById('next1');
+let prevButton = document.getElementById('prev1');
+let carousel = document.querySelector('.carousel1');
+let listHTML = document.querySelector('.carousel1 .list1');
+let seeMoreButtons = document.querySelectorAll('.seeMore1');
+let backButton = document.getElementById('back1');
+
+nextButton.onclick = function(){
+    showSL('next1');
+}
+prevButton.onclick = function(){
+    showSL('prev1');
+}
+let unAcceppClick;
+const showSL = (type) => {
+    nextButton.style.pointerEvents = 'none';
+    prevButton.style.pointerEvents = 'none';
+
+    carousel.classList.remove('next1', 'prev1');
+    let items = document.querySelectorAll('.carousel1 .list1 .item1');
+    if(type === 'next1'){
+        listHTML.appendChild(items[0]);
+        carousel.classList.add('next1');
+    }else{
+        listHTML.prepend(items[items.length - 1]);
+        carousel.classList.add('prev1');
+    }
+    clearTimeout(unAcceppClick);
+    unAcceppClick = setTimeout(()=>{
+        nextButton.style.pointerEvents = 'auto';
+        prevButton.style.pointerEvents = 'auto';
+    }, 2000)
+}
+seeMoreButtons.forEach((button) => {
+    button.onclick = function(){
+        carousel.classList.remove('next1', 'prev1');
+        carousel.classList.add('showDetail1');
+    }
+});
+backButton.onclick = function(){
+    carousel.classList.remove('showDetail1');
+}
+=======
+>>>>>>> 816902fa3700ae774320ac9fa229a81ce66d7842
