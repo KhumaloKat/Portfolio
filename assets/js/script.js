@@ -273,6 +273,7 @@ slider.onmousemove = (e) => {
 };
 
 // Project Slider
+<<<<<<< HEAD
 
 let nextButton = document.getElementById('next1');
 let prevButton = document.getElementById('prev1');
@@ -316,3 +317,5 @@ seeMoreButtons.forEach((button) => {
 backButton.onclick = function(){
     carousel.classList.remove('showDetail1');
 }
+=======
+>>>>>>> 816902fa3700ae774320ac9fa229a81ce66d7842
